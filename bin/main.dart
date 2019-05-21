@@ -3,7 +3,7 @@ import 'package:mongo_dart/mongo_dart.dart';
 
 Future main() async {
   final app = Application<FlutterWeatherChannel>()
-      ..options.configurationFilePath = "config.yaml"
+      ..options.configurationFilePath = "heroku.yaml"
       ..options.port = 8888;
   final count = Platform.numberOfProcessors ~/ 2;
   await app.start(numberOfInstances: count > 0 ? count : 1);
