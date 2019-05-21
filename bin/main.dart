@@ -1,5 +1,4 @@
 import 'package:flutter_weather/flutter_weather.dart';
-import 'package:mongo_dart/mongo_dart.dart';
 
 Future main() async {
   final app = Application<FlutterWeatherChannel>()
