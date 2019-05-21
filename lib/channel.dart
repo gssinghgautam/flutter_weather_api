@@ -17,15 +17,15 @@ class FlutterWeatherChannel extends ApplicationChannel {
   /// This method is invoked prior to [entryPoint] being accessed.
   
   Db db;
-  ApplicationConfiguration app;
+  //ApplicationConfiguration app;
   DbCollection peopleCollection;
   @override
   Future prepare() async {
     logger.onRecord.listen(
         (rec) => print("$rec ${rec.error ?? ""} ${rec.stackTrace ?? ""}"));
-    app = ApplicationConfiguration("app/config.yaml");
-    print(app.database);
-      db = Db(app.database);
+    //app = ApplicationConfiguration("app/config.yaml");
+    //print(app.database);
+      db = Db("mongodb://flutter_weather:Kunwar1993@ds259596.mlab.com:59596/heroku_lpb6gczj");
       await db.open();
       print("Database is open");
   }
