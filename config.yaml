@@ -1,0 +1,3 @@
+database: $MONGODB_URI
+apiBaseURL: /api
+identifier: 2
