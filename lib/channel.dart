@@ -23,7 +23,7 @@ class FlutterWeatherChannel extends ApplicationChannel {
   Future prepare() async {
     logger.onRecord.listen(
         (rec) => print("$rec ${rec.error ?? ""} ${rec.stackTrace ?? ""}"));
-    app = ApplicationConfiguration("config.yaml");
+    app = ApplicationConfiguration("app/config.yaml");
     print(app.database);
       db = Db(app.database);
       await db.open();
