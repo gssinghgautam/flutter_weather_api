@@ -9,6 +9,7 @@ environment:
 dependencies:
   aqueduct: ^3.0.0
   mongo_dart: ^0.3.5
+  safe_config: ^2.0.2
 
 dev_dependencies:
   test: ^1.0.0

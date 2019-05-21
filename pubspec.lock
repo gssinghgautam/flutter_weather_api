@@ -296,7 +296,7 @@ packages:
     source: hosted
     version: "1.4.2"
   safe_config:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: safe_config
       url: "https://pub.dartlang.org"

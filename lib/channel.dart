@@ -1,3 +1,4 @@
+import 'package:flutter_weather/application_configuration.dart';
 import 'package:flutter_weather/cities/city_controller.dart';
 import 'package:mongo_dart/mongo_dart.dart';
 
@@ -16,13 +17,15 @@ class FlutterWeatherChannel extends ApplicationChannel {
   /// This method is invoked prior to [entryPoint] being accessed.
   
   Db db;
+  ApplicationConfiguration app;
   DbCollection peopleCollection;
   @override
   Future prepare() async {
     logger.onRecord.listen(
         (rec) => print("$rec ${rec.error ?? ""} ${rec.stackTrace ?? ""}"));
-
-      db = Db("mongodb://localhost:27017/local");
+    app = ApplicationConfiguration("config.yaml");
+    print(app.database);
+      db = Db(app.database);
       await db.open();
       print("Database is open");
   }
